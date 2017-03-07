@@ -13,13 +13,25 @@
             <div class="form-group">
                 <input type="hidden" name="id" value="${sala.id}">
 
-                <label for="nome">Nome:</label>
-                <input id="nome" type="text" name="nome" class="form-control" value="${sala.nome}">
 
-                <c:forEach items="${bindingResult.getFieldErrors('nome')}" var="error">
-                    <span class="text-danger">${error.defaultMessage}</span>
-                </c:forEach>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input id="nome" type="text" name="nome" class="form-control" value="${sala.nome}">
 
+                    <c:forEach items="${bindingResult.getFieldErrors('nome')}" var="error">
+                        <span class="text-danger">${error.defaultMessage}</span>
+                    </c:forEach>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="preco">Preço:</label>
+                    <input id="preco" type="text" name="preco" class="form-control" value="${sala.preco}">
+
+                    <c:forEach items="${bindingResult.getFieldErrors('preco')}" var="error">
+                        <span class="text-danger">${error.defaultMessage}</span>
+                    </c:forEach>
+                </div>
             </div>
 
             <button type="submit" class="btn btn-primary">Gravar</button>
