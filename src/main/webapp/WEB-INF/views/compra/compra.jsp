@@ -27,23 +27,23 @@
 
 		</c:forEach>
 		</div>
-    <style>
-		a:hover {
-			text-decoration: none;
-		}
+		<style>
+			a:hover {
+				text-decoration: none;
+			}
 
-		.panel{
-			transition: 		transform 0.7s;
-		}
+			.panel{
+				transition: 		transform 0.7s;
+			}
 
-		.panel:hover{
-			transform: 			translateY(-0.5em);
-		}
+			.panel:hover{
+				transform: 			translateY(-0.5em);
+			}
 
-		.panelSize {
-			min-height: 10.5em;
-			min-width: 13em;
-		}
-	</style>
+			.panelSize {
+				min-height: 10.5em;
+				min-width: 13em;
+			}
+		</style>
     </jsp:body>
 </ingresso:template>
