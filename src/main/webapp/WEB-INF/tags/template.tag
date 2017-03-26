@@ -41,9 +41,9 @@
 					</sec:authorize>
 
 
-					<sec:authorize access="isAnonymous() Or hasRole('COMPRADOR')">
+					<%--<sec:authorize access="isAnonymous() Or hasRole('COMPRADOR')">--%>
 						<li><a href="/compra">Comprar</a></li>
-					</sec:authorize>
+					<%--</sec:authorize>--%>
 
 					<sec:authorize access="hasRole('COMPRADOR')">
 						<li><a href="/usuario/compras">Minhas Compras</a></li>
