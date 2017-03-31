@@ -21,12 +21,12 @@ public class DescontoTest {
         Sala sala = new Sala("Eldorado - IMAX", new BigDecimal("20.5"));
         Filme filme = new Filme("Rogue One", Duration.ofMinutes(120), "SCI-FI", new BigDecimal("12"));
         Sessao sessao = new Sessao(LocalTime.now(), filme, sala);
-        Ingresso ingresso = new Ingresso(sessao, new DescontoDeTrintaPorCentoParaBancos(), lugar);
+        Ingresso ingresso = new Ingresso(sessao, TipoDeIngresso.BANCO, lugar);
 
 
         BigDecimal precoEsperado = new BigDecimal("22.75");
 
-        assertEquals(precoEsperado, ingresso.getPreco());
+        assertEquals(precoEsperado, ingresso.getPrecoComDesconto());
 
     }
 
@@ -38,12 +38,12 @@ public class DescontoTest {
         Sala sala = new Sala("Eldorado - IMAX", new BigDecimal("20.5"));
         Filme filme = new Filme("Rogue One", Duration.ofMinutes(120), "SCI-FI", new BigDecimal("12"));
         Sessao sessao = new Sessao(LocalTime.now(), filme, sala);
-        Ingresso ingresso = new Ingresso(sessao, new DescontoEstudante(), lugar);
+        Ingresso ingresso = new Ingresso(sessao, TipoDeIngresso.ESTUDANTE, lugar);
 
         BigDecimal precoEsperado = new BigDecimal("16.25");
 
 
-        assertEquals(precoEsperado, ingresso.getPreco());
+        assertEquals(precoEsperado, ingresso.getPrecoComDesconto());
 
     }
 
@@ -53,13 +53,13 @@ public class DescontoTest {
         Sala sala = new Sala("Eldorado - IMAX", new BigDecimal("20.5"));
         Filme filme = new Filme("Rogue One", Duration.ofMinutes(120), "SCI-FI", new BigDecimal("12"));
         Sessao sessao = new Sessao(LocalTime.now(), filme, sala);
-        Ingresso ingresso = new Ingresso(sessao, new SemDesconto(),lugar);
+        Ingresso ingresso = new Ingresso(sessao, TipoDeIngresso.INTEIRO,lugar);
 
 
         BigDecimal precoEsperado = new BigDecimal("32.5");
 
 
-        assertEquals(precoEsperado, ingresso.getPreco());
+        assertEquals(precoEsperado, ingresso.getPrecoComDesconto());
 
 
     }
