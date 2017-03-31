@@ -98,4 +98,13 @@ public class FilmeController {
         return modelAndView;
     }
 
+    @GetMapping("/filme/em-cartaz")
+    public ModelAndView home(){
+        ModelAndView modelAndView = new ModelAndView("filme/em-cartaz");
+
+        modelAndView.addObject("filmes", filmeDao.findAll());
+
+        return modelAndView;
+    }
+
 }
