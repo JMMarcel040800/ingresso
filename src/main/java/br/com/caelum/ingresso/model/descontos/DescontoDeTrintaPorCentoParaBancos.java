@@ -1,13 +1,10 @@
 package br.com.caelum.ingresso.model.descontos;
 
-import org.springframework.stereotype.Component;
-
 import java.math.BigDecimal;
 
 /**
  * Created by nando on 07/03/17.
  */
-@Component
 public class DescontoDeTrintaPorCentoParaBancos implements Desconto {
 
     private BigDecimal percentualDeDesconto = new BigDecimal("0.3");
