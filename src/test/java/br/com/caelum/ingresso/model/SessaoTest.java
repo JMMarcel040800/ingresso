@@ -1,13 +1,10 @@
 package br.com.caelum.ingresso.model;
 
-import br.com.caelum.ingresso.model.descontos.SemDesconto;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalTime;
-import java.util.Collections;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -47,7 +44,7 @@ public class SessaoTest {
 
         Sessao sessao = new Sessao(LocalTime.now(), rogueOne, eldorado7);
 
-        Ingresso ingresso = new Ingresso(sessao, new SemDesconto(), a1);
+        Ingresso ingresso = new Ingresso(sessao, TipoDeIngresso.INTEIRO, a1);
 
         Set<Ingresso> ingressos = Stream.of(ingresso).collect(toSet());
 
