@@ -44,7 +44,7 @@ public class SessaoController {
     @Autowired
     private Carrinho carrinho;
 
-    @GetMapping("/sessao")
+    @GetMapping("/admin/sessao")
     public ModelAndView form(@RequestParam("salaId") Integer salaId, SessaoForm form){
         ModelAndView modelAndView = new ModelAndView("sessao/sessao");
 
@@ -62,7 +62,7 @@ public class SessaoController {
 
 
 
-    @PostMapping("/sessao")
+    @PostMapping("/admin/sessao")
     @Transactional
     public ModelAndView salva(@Valid SessaoForm form, BindingResult result) {
 
