@@ -14,7 +14,7 @@
 <ingresso:template>
     <jsp:body>
         <div class=" col-md-6 col-md-offset-3">
-            <form action="/usuario" method="post">
+            <form action="/usuario/request" method="post">
                 <span class="text-danger">${param.error}</span>
 
                 <div class="form-group">
@@ -22,12 +22,7 @@
                     <input id="login" type="text" name="email" class="form-control">
                 </div>
 
-                <div class="form-group">
-                    <label for="password">Senha:</label>
-                    <input id="password" type="password" name="password" class="form-control">
-                </div>
-
-                <button class="btn btn-primary" type="submit">Criar usuário</button>
+                <button class="btn btn-primary" type="submit">Solicitar Acesso</button>
             </form>
         </div>
     </jsp:body>
