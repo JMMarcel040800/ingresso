@@ -21,9 +21,9 @@ public class Usuario implements UserDetails {
     private String email;
     private String password;
 
-    private boolean ativo;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+
+    @ManyToMany(fetch = FetchType.EAGER )
     private Set<Permissao> permissoes = new HashSet<>();
 
     /**
@@ -32,10 +32,9 @@ public class Usuario implements UserDetails {
     public Usuario() {
     }
 
-    public Usuario(String email, String password, boolean ativo, Set<Permissao> permissoes) {
+    public Usuario(String email, String password, Set<Permissao> permissoes) {
         this.email = email;
         this.password = password;
-        this.ativo = ativo;
         this.permissoes = permissoes;
     }
 
@@ -71,7 +70,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return ativo;
+        return true;
     }
 
 
@@ -87,12 +86,22 @@ public class Usuario implements UserDetails {
         this.password = password;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
-    }
 
     public void setPermissoes(Set<Permissao> permissoes) {
         this.permissoes = permissoes;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+
+    public Set<Permissao> getPermissoes() {
+        return permissoes;
     }
 
     @Override
@@ -101,7 +110,6 @@ public class Usuario implements UserDetails {
                 "id=" + id +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", ativo=" + ativo +
                 ", permissoes=" + permissoes +
                 '}';
     }
